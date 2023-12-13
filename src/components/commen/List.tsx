@@ -1,18 +1,23 @@
 import React from "react"
+import { Link } from "react-router-dom"
 
 type prop = {
     array:string[],
-    list_Type:'row' | 'col',
-    gap:string
+    titel:string
 }
-const List:React.FC<prop> = ({array , gap , list_Type}) => {
+const List:React.FC<prop> = ({array , titel}) => {
   return (
-      <ul>
+    <div className="w-full px-4">
+    <h2 className="mb-3 text-sm font-medium tracking-widest text-gray-900 uppercase title-font">{titel}</h2>
+    <nav className="mb-10 list-none">
     {array.map(item => (
-        <li key={item}>{item}</li>
+        <li  className={`mt-3`} key={item}>
+          <Link to={titel} className="text-gray-500 cursor-pointer hover:text-gray-900">{item}</Link>
+          </li>
         ))}
-  </ul>
-        )
+    </nav>
+</div>
+        )    
 }
 
 export default List

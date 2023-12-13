@@ -1,14 +1,17 @@
+import { NavLink } from "react-router-dom";
+
 type prop = {
     link: string,
     to: string
+    styles?:string
   }
   
-  const Link = ({ link, to }: prop) => {
+  const Link = ({ link, to , styles }: prop) => {
     return (
-      <a className="relative text-xl w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-black after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-center" href={to}>
+      <NavLink key={link} to={to} className= {`rounded p-2 cursor-pointer text-xs font-medium uppercase leading-normal text-primary transition duration-150 ease-in-out hover:bg-neutral-100 hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 dark:hover:bg-neutral-700 block ${styles}`}>
         {link}
-      </a>
+      </NavLink>
     )
   }
-  
+   
   export default Link;

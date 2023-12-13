@@ -4,6 +4,9 @@
     font-size: 20px;
     position: relative;
     color: lightcyan;
+    top: 50%;
+    right: 50%;
+    transform: translate(-50% , -50%);
 }
 
 .car {
